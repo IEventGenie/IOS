@@ -1,0 +1,294 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A253E000000000000000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8B89B40000000000000000 /* UIKit.framework */; };
+		169431620000000000000000 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFA7D160000000000000000 /* MapKit.framework */; };
+		130324C40000000000000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 286970780000000000000000 /* Foundation.framework */; };
+		25F56E4A0000000000000000 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29867AE80000000000000000 /* CoreGraphics.framework */; };
+		84FFEEA00000000000000000 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24D863DA0000000000000000 /* Images.xcassets */; };
+		4BEF24C00000000000000000 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2147573C0000000000000000 /* LaunchScreen.xib */; };
+		12DE5AE00000000000000000 /* Phone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DB64A9E0000000000000000 /* Phone.storyboard */; };
+		3D9CD9100000000000000000 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB0292000000000000000000 /* Info.plist */; };
+		3A0BCC720000000000000000 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48C0F3000000000000000000 /* Entitlements.plist */; };
+		367ABFD40000000000000000 /* threelines.png in Resources */ = {isa = PBXBuildFile; fileRef = 81D1BCE00000000000000000 /* threelines.png */; };
+		32E9B3360000000000000000 /* Background_Beaconstac_Mobile.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE286C00000000000000000 /* Background_Beaconstac_Mobile.png */; };
+		2F58A6980000000000000000 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3F350A00000000000000000 /* Info.plist */; };
+		2BC799FA0000000000000000 /* MSAnalytics 2.mom in Resources */ = {isa = PBXBuildFile; fileRef = 12D041A80000000000000000 /* MSAnalytics 2.mom */; };
+		28368D5C0000000000000000 /* MSAnalytics 2.omo in Resources */ = {isa = PBXBuildFile; fileRef = 16614E460000000000000000 /* MSAnalytics 2.omo */; };
+		24A580BE0000000000000000 /* MSAnalytics.mom in Resources */ = {isa = PBXBuildFile; fileRef = 19F25AE40000000000000000 /* MSAnalytics.mom */; };
+		211474200000000000000000 /* VersionInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D8367820000000000000000 /* VersionInfo.plist */; };
+		3D69F5F40000000000000000 /* IntroController.h in Sources */ = {isa = PBXBuildFile; fileRef = 7EA38B200000000000000000 /* IntroController.h */; };
+		39D8E9560000000000000000 /* IntroController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B455000000000000000000 /* IntroController.m */; };
+		3647DCB80000000000000000 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = F0C51EE00000000000000000 /* AppDelegate.h */; };
+		32B6D01A0000000000000000 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D5E8C0000000000000000 /* AppDelegate.m */; };
+		2F25C37C0000000000000000 /* ContentController.h in Sources */ = {isa = PBXBuildFile; fileRef = 162E6B2A0000000000000000 /* ContentController.h */; };
+		2B94B6DE0000000000000000 /* ContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BF77C80000000000000000 /* ContentController.m */; };
+		2803AA400000000000000000 /* MenuController.h in Sources */ = {isa = PBXBuildFile; fileRef = 1D5084660000000000000000 /* MenuController.h */; };
+		24729DA20000000000000000 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E191040000000000000000 /* MenuController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		331C96520000000000000000 /* iEventGenie.iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "iEventGenie.iOS.app"; path = "iEventGenie.iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F8B89B40000000000000000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; };
+		2BFA7D160000000000000000 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MapKit.framework"; path = "System/Library/Frameworks/MapKit.framework"; sourceTree = SDKROOT; };
+		286970780000000000000000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; };
+		29867AE80000000000000000 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreGraphics.framework"; path = "System/Library/Frameworks/CoreGraphics.framework"; sourceTree = SDKROOT; };
+		24D863DA0000000000000000 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images.xcassets"; path = "Images.xcassets"; sourceTree = "<group>"; };
+		2147573C0000000000000000 /* LaunchScreen.xib */ = {isa = PBXFileReference; name = "LaunchScreen.xib"; path = "LaunchScreen.xib"; sourceTree = "<group>"; };
+		1DB64A9E0000000000000000 /* Phone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Phone.storyboard"; path = "Phone.storyboard"; sourceTree = "<group>"; };
+		FB0292000000000000000000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+		48C0F3000000000000000000 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Entitlements.plist"; path = "Entitlements.plist"; sourceTree = "<group>"; };
+		81D1BCE00000000000000000 /* threelines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "threelines.png"; path = "threelines.png"; sourceTree = "<group>"; };
+		BAE286C00000000000000000 /* Background_Beaconstac_Mobile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Background_Beaconstac_Mobile.png"; path = "Background_Beaconstac_Mobile.png"; sourceTree = "<group>"; };
+		F3F350A00000000000000000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Beaconstac.bundle/Info.plist"; sourceTree = "<group>"; };
+		12D041A80000000000000000 /* MSAnalytics 2.mom */ = {isa = PBXFileReference; name = "MSAnalytics 2.mom"; path = "Beaconstac.bundle/MSAnalytics.momd/MSAnalytics 2.mom"; sourceTree = "<group>"; };
+		16614E460000000000000000 /* MSAnalytics 2.omo */ = {isa = PBXFileReference; name = "MSAnalytics 2.omo"; path = "Beaconstac.bundle/MSAnalytics.momd/MSAnalytics 2.omo"; sourceTree = "<group>"; };
+		19F25AE40000000000000000 /* MSAnalytics.mom */ = {isa = PBXFileReference; name = "MSAnalytics.mom"; path = "Beaconstac.bundle/MSAnalytics.momd/MSAnalytics.mom"; sourceTree = "<group>"; };
+		1D8367820000000000000000 /* VersionInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "VersionInfo.plist"; path = "Beaconstac.bundle/MSAnalytics.momd/VersionInfo.plist"; sourceTree = "<group>"; };
+		7EA38B200000000000000000 /* IntroController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "IntroController.h"; path = "IntroController.h"; sourceTree = "<group>"; };
+		B7B455000000000000000000 /* IntroController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "IntroController.m"; path = "IntroController.m"; sourceTree = "<group>"; };
+		F0C51EE00000000000000000 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate.h"; path = "AppDelegate.h"; sourceTree = "<group>"; };
+		129D5E8C0000000000000000 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate.m"; path = "AppDelegate.m"; sourceTree = "<group>"; };
+		162E6B2A0000000000000000 /* ContentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ContentController.h"; path = "ContentController.h"; sourceTree = "<group>"; };
+		19BF77C80000000000000000 /* ContentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ContentController.m"; path = "ContentController.m"; sourceTree = "<group>"; };
+		1D5084660000000000000000 /* MenuController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MenuController.h"; path = "MenuController.h"; sourceTree = "<group>"; };
+		20E191040000000000000000 /* MenuController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MenuController.m"; path = "MenuController.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C4B60800000000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A253E000000000000000000 /* UIKit.framework in Frameworks */,
+				169431620000000000000000 /* MapKit.framework in Frameworks */,
+				130324C40000000000000000 /* Foundation.framework in Frameworks */,
+				25F56E4A0000000000000000 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		277ECF510000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				CD8623E00000000000000000 /* iEventGenie.iOS */,
+				178B88180000000000000000 /* Frameworks */,
+				3231F52B0000000000000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3231F52B0000000000000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				331C96520000000000000000 /* iEventGenie.iOS.app */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		178B88180000000000000000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F8B89B40000000000000000 /* UIKit.framework */,
+				2BFA7D160000000000000000 /* MapKit.framework */,
+				286970780000000000000000 /* Foundation.framework */,
+				29867AE80000000000000000 /* CoreGraphics.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		CD8623E00000000000000000 /* iEventGenie.iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F0C51EE00000000000000000 /* AppDelegate.h */,
+				BAE286C00000000000000000 /* Background_Beaconstac_Mobile.png */,
+				162E6B2A0000000000000000 /* ContentController.h */,
+				48C0F3000000000000000000 /* Entitlements.plist */,
+				24D863DA0000000000000000 /* Images.xcassets */,
+				FB0292000000000000000000 /* Info.plist */,
+				7EA38B200000000000000000 /* IntroController.h */,
+				2147573C0000000000000000 /* LaunchScreen.xib */,
+				1D5084660000000000000000 /* MenuController.h */,
+				1DB64A9E0000000000000000 /* Phone.storyboard */,
+				81D1BCE00000000000000000 /* threelines.png */,
+				3772168A0000000000000000 /* Beaconstac.bundle */,
+				2CBEF0B00000000000000000 /* Supporting Files */,
+			);
+			name = "iEventGenie.iOS";
+			sourceTree = "<group>";
+		};
+		3772168A0000000000000000 /* Beaconstac.bundle */ = {
+			isa = PBXGroup;
+			children = (
+				F3F350A00000000000000000 /* Info.plist */,
+				1218839D0000000000000000 /* MSAnalytics.momd */,
+			);
+			name = "Beaconstac.bundle";
+			sourceTree = "<group>";
+		};
+		1218839D0000000000000000 /* MSAnalytics.momd */ = {
+			isa = PBXGroup;
+			children = (
+				12D041A80000000000000000 /* MSAnalytics 2.mom */,
+				16614E460000000000000000 /* MSAnalytics 2.omo */,
+				19F25AE40000000000000000 /* MSAnalytics.mom */,
+				1D8367820000000000000000 /* VersionInfo.plist */,
+			);
+			name = "MSAnalytics.momd";
+			sourceTree = "<group>";
+		};
+		2CBEF0B00000000000000000 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				129D5E8C0000000000000000 /* AppDelegate.m */,
+				19BF77C80000000000000000 /* ContentController.m */,
+				B7B455000000000000000000 /* IntroController.m */,
+				20E191040000000000000000 /* MenuController.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		302AD20B0000000000000000 /* iEventGenie.iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27B1B26D0000000000000000 /* Build configuration list for PBXNativeTarget "iEventGenie.iOS" */;
+			buildPhases = (
+				F72182600000000000000000 /* Sources */,
+				2C4B60800000000000000000 /* Frameworks */,
+				BE10B8800000000000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iEventGenie.iOS";
+			productName = "iEventGenie.iOS";
+			productReference = 331C96520000000000000000 /* iEventGenie.iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1CCC4A880000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 79840DF00000000000000000 /* Build configuration list for PBXProject "iEventGenie.iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 277ECF510000000000000000;
+			productRefGroup = 3231F52B0000000000000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				302AD20B0000000000000000 /* iEventGenie.iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE10B8800000000000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84FFEEA00000000000000000 /* Images.xcassets in Resources */,
+				4BEF24C00000000000000000 /* LaunchScreen.xib in Resources */,
+				12DE5AE00000000000000000 /* Phone.storyboard in Resources */,
+				3D9CD9100000000000000000 /* Info.plist in Resources */,
+				3A0BCC720000000000000000 /* Entitlements.plist in Resources */,
+				367ABFD40000000000000000 /* threelines.png in Resources */,
+				32E9B3360000000000000000 /* Background_Beaconstac_Mobile.png in Resources */,
+				2F58A6980000000000000000 /* Info.plist in Resources */,
+				2BC799FA0000000000000000 /* MSAnalytics 2.mom in Resources */,
+				28368D5C0000000000000000 /* MSAnalytics 2.omo in Resources */,
+				24A580BE0000000000000000 /* MSAnalytics.mom in Resources */,
+				211474200000000000000000 /* VersionInfo.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F72182600000000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D69F5F40000000000000000 /* IntroController.h in Sources */,
+				39D8E9560000000000000000 /* IntroController.m in Sources */,
+				3647DCB80000000000000000 /* AppDelegate.h in Sources */,
+				32B6D01A0000000000000000 /* AppDelegate.m in Sources */,
+				2F25C37C0000000000000000 /* ContentController.h in Sources */,
+				2B94B6DE0000000000000000 /* ContentController.m in Sources */,
+				2803AA400000000000000000 /* MenuController.h in Sources */,
+				24729DA20000000000000000 /* MenuController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4592C1400000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = MonoTouch;
+		};
+		CB336FB00000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				PRODUCT_NAME = "iEventGenie.iOS";
+				WRAPPER_EXTENSION = app;
+			};
+			name = MonoTouch;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		79840DF00000000000000000 /* Build configuration list for PBXProject "iEventGenie.iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4592C1400000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+		27B1B26D0000000000000000 /* Build configuration list for PBXNativeTarget "iEventGenie.iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB336FB00000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1CCC4A880000000000000000 /* Project object */;
+}

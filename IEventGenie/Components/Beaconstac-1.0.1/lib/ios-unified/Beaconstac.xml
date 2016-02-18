@@ -1,0 +1,663 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Beaconstac</name>
+    </assembly>
+    <members>
+        <member name="T:Mobstac.MSLogLevel">
+            <Summary>
+            Logging level for Console output.
+            </Summary>
+        </member>
+        <member name="F:Mobstac.MSLogLevel.Verbose">
+            <summary>
+            Verbose
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSLogLevel.Error">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSLogLevel.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="T:Mobstac.MSBeaconAffinity">
+            <Summary>
+            Set / get beacon affinity, which is how sticky we are to
+            a beacon once we camp on it. By default this is set to MSBeaconAffinityMedium.
+            Use this to control how sensitive your app is to multiple beacons in a given space.
+            Increasing affinity values (Low -&gt; High) will cause your app to lock harder
+            onto the closest beacon and switch to a new one it sees only when it is sufficiently close
+            to the new one. Random sighting of another "far away" beacon will not be ignored.
+            </Summary>
+        </member>
+        <member name="F:Mobstac.MSBeaconAffinity.None">
+            <summary>
+            No affinity.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSBeaconAffinity.Low">
+            <summary>
+            Low affinity.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSBeaconAffinity.Medium">
+            <summary>
+            Medium affinity.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSBeaconAffinity.High">
+            <summary>
+            High affinity.
+            </summary>
+        </member>
+        <member name="T:Mobstac.MSEventType">
+            <Summary>
+            MSEventType is an enumeration of all the events possible in Beaconstac
+            </Summary>
+        </member>
+        <member name="F:Mobstac.MSEventType.None">
+            <summary>
+            The none.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSEventType.CampOn">
+            <summary>
+            Beacon Camp on.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSEventType.ExitBeacon">
+            <summary>
+            Exit beacon.
+            </summary>
+        </member>
+        <member name="T:Mobstac.MSCardType">
+            <Summary>
+            Represents the type of the card
+            </Summary>
+        </member>
+        <member name="F:Mobstac.MSCardType.None">
+            <summary>
+            The none.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSCardType.Summary">
+            <summary>
+            The summary.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSCardType.Photo">
+            <summary>
+            The photo.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSCardType.Media">
+            <summary>
+            The media.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSCardType.Page">
+            <summary>
+            The page.
+            </summary>
+        </member>
+        <member name="T:Mobstac.MSActionType">
+            <Summary>
+            MSActionType describes the type of action triggered from a rule
+            </Summary>
+        </member>
+        <member name="F:Mobstac.MSActionType.None">
+            <summary>
+            No action associated.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSActionType.Popup">
+            <summary>
+            Returns a string value in message field.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSActionType.Webpage">
+            <summary>
+            Returns a URL value in message field.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSActionType.Card">
+            <summary>
+            Returns a reference to MSCard object.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSActionType.Webhook">
+            <summary>
+            Returns a URL value in message field.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSActionType.Custom">
+            <summary>
+            Returns a dictionary value in message field.
+            </summary>
+        </member>
+        <member name="T:Mobstac.MSUIAction">
+            <Summary>
+            This describes different action types that can be logged for Analytics
+            </Summary>
+        </member>
+        <member name="F:Mobstac.MSUIAction.Delivered">
+            <summary>
+            Delivered.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSUIAction.Opened">
+            <summary>
+            Opened.
+            </summary>
+        </member>
+        <member name="F:Mobstac.MSUIAction.Clicked">
+            <summary>
+            Clicked.
+            </summary>
+        </member>
+        <member name="T:Mobstac.Beaconstac">
+            <Summary>
+            The main class and entry point for working with the Beaconstac component.
+            </Summary>
+        </member>
+        <member name="M:Mobstac.Beaconstac.LogEvent(Mobstac.MSUIAction,System.String)">
+            <summary>
+            Used to log user events to server such as when the user views
+            or clicks on a message shown by the SDK as a result of rule processing.
+            </summary>
+            <param name="actionType">Value of type MSUIAction</param>
+            <param name="message">Message to be sent to the server.</param>
+        </member>
+        <member name="M:Mobstac.Beaconstac.SetUserIdentity(System.String,System.String,System.String,Foundation.NSDictionary)">
+            <summary>
+            Initialize a Beaconstac object with user-specific data, to be used in logging events and processing rules.
+            </summary>
+            <param name="firstName">First name of the user.</param>
+            <param name="lastName">Last name of the user.</param>
+            <param name="email">Email ID of the user.</param>
+            <param name="userInfo">Any additional information associated to a user. It must be a dictionary.</param>
+        </member>
+        <member name="M:Mobstac.Beaconstac.SharedInstance(System.nint,System.String)">
+            <summary>
+            Beaconstac singleton method
+            </summary>
+            <returns>The instance.</returns>
+            <param name="organizationId">Organization identifier.</param>
+            <param name="devToken">Dev token.</param>
+        </member>
+        <member name="M:Mobstac.Beaconstac.StartRangingBeacons(System.String,System.String,Foundation.NSDictionary)">
+            <summary>
+            Start ranging beacons in the CLBeaconRegion created with given proximity UUID and region identifier, filtered using option dictionary.
+            </summary>
+            <param name="uuid">The Beacon UUID. Currently, Beaconstac supports only 1 UUID per app</param>
+            <param name="identifier">A string which identifies your beacons. It should be of the format com.company_name.app_name </param>
+            <param name="options">A set of key-value pairs specifying criteria to filter the detected beacons. Possible filter options include key
+            "mybeacons": accepts a boolean value. If set to True, only the beacons in your account are ranged.</param>
+        </member>
+        <member name="M:Mobstac.Beaconstac.StopRangingBeacons">
+            <summary>
+            Stops the ranging beacons.
+            </summary>
+        </member>
+        <member name="M:Mobstac.Beaconstac.UpdateFact(Foundation.NSObject,System.String)">
+            <summary>
+            Updates the primary facts dictionary which is used by MSRuleProcessor to evaluate rules.
+            Facts such as beacon proximity, user location, user id are updated by the SDK.
+            Any external fact which needs to be used must be set by the developer.		/// </summary>
+            <param name="fact">The value of the fact for a corresponding key.</param>
+            <param name="key">The key against which the fact must be stored.</param>
+        </member>
+        <member name="P:Mobstac.Beaconstac.Beaconaffinity">
+            <summary>
+            Set / get beacon affinity, which is how sticky we are to
+            a beacon once we camp on it. By default this is set to MSBeaconAffinityMedium.
+            Use this to control how sensitive your app is to multiple beacons in a given space.
+            Increasing affinity values (Low -&gt; High) will cause your app to lock harder
+            onto the closest beacon and switch to a new one it sees only when it is sufficiently close
+            to the new one. Random sighting of another "far away" beacon will not be ignored.
+            </summary>
+            <value>Beaconaffinity</value>
+        </member>
+        <member name="P:Mobstac.Beaconstac.BeaconManager">
+            <summary>
+            The MSBeaconManager instance in use.
+            </summary>
+            <value>The beacon manager.</value>
+        </member>
+        <member name="P:Mobstac.Beaconstac.Delegate">
+            <Summary>
+            The Delegate to receive events from Beaconstac.
+            </Summary>
+            <value>WeakDelegate.</value>
+        </member>
+        <member name="P:Mobstac.Beaconstac.FactsDictionary">
+            <summary>
+            Holds all the key values (for facts) required for rule processing.
+            e.g. It contains keys: nearbeaconName - which contains the camped on beacon name,
+            nearbeacon - which contains the UUID:major:minor of the camped on beacon and
+            here - which contains the current location of the device
+            </summary>
+            <value>The facts dictionary.</value>
+        </member>
+        <member name="P:Mobstac.Beaconstac.RangedBeacons">
+            <summary>
+            A dictionary of all the ranged beacons with beacon key(UUID:Major:Minor)
+            as the key and MSBeacon object as the value
+            </summary>
+            <value>Dictionary of Ranged beacons.</value>
+        </member>
+        <member name="P:Mobstac.Beaconstac.RuleProcessor">
+            <summary>
+            The MSRuleProcessor instance in use.
+            </summary>
+            <value>MSRuleProcessor instance</value>
+        </member>
+        <member name="E:Mobstac.Beaconstac.BeaconsRanged">
+            <summary>
+            Sent to the delegate when one or more beacons are detected by the device.
+            </summary>
+            <param name="beaconsDictionary">A dictionary with beacon 'UUID:major:minor' as key
+            and MSBeacon as value for all the beacons in range.</param>
+        </member>
+        <member name="T:Mobstac.BeaconstacBeaconsRangedEventArgs">
+            <summary>
+            Event generated when one or more beacons are detected by the device.
+            </summary>
+        </member>
+        <member name="M:Mobstac.BeaconstacBeaconsRangedEventArgs.#ctor(Foundation.NSDictionary)">
+            <summary>
+            Event generated when one or more beacons are detected by the device.
+            </summary>
+        </member>
+        <member name="P:Mobstac.BeaconstacBeaconsRangedEventArgs.BeaconsDictionary">
+            <param name="beaconsDictionary">A dictionary with beacon 'UUID:major:minor' as key
+            and MSBeacon as value for all the beacons in range.</param>
+        </member>
+        <member name="T:Mobstac.BeaconstacCampedOnBeaconEventArgs">
+            <summary>
+            Sent to the delegate when the device has crossed over the near proximity zone threshold for a beacon.
+            </summary>
+        </member>
+        <member name="M:Mobstac.BeaconstacCampedOnBeaconEventArgs.#ctor(Mobstac.MSBeacon,Foundation.NSDictionary)">
+            <summary>
+            Sent to the delegate when the device has crossed over the near proximity zone threshold for a beacon.
+            </summary>
+        </member>
+        <member name="P:Mobstac.BeaconstacCampedOnBeaconEventArgs.Beacon">
+            <param name="beacon">This returns the beacon object that a device has camped on to.</param>
+        </member>
+        <member name="P:Mobstac.BeaconstacCampedOnBeaconEventArgs.BeaconsDictionary">
+            <param name="beaconsDictionary">This returns a dictionary of all available beacons in the range of device.</param>
+        </member>
+        <member name="T:Mobstac.BeaconstacDidEnterBeaconRegionEventArgs">
+            <summary>
+            Invoked when the user enters a monitored region.
+            </summary>
+        </member>
+        <member name="M:Mobstac.BeaconstacDidEnterBeaconRegionEventArgs.#ctor(CoreLocation.CLRegion)">
+            <summary>
+            Invoked when the user enters a monitored region.
+            </summary>
+        </member>
+        <member name="P:Mobstac.BeaconstacDidEnterBeaconRegionEventArgs.Region">
+            <param name="region">Beacon Region.</param>
+        </member>
+        <member name="T:Mobstac.BeaconstacDidExitBeaconRegionEventArgs">
+            <summary>
+            Invoked when the user exits a monitored region.
+            </summary>
+        </member>
+        <member name="M:Mobstac.BeaconstacDidExitBeaconRegionEventArgs.#ctor(CoreLocation.CLRegion)">
+            <summary>
+            Invoked when the user exits a monitored region.
+            </summary>
+        </member>
+        <member name="P:Mobstac.BeaconstacDidExitBeaconRegionEventArgs.Region">
+            <param name="region">Beacon region.</param>
+        </member>
+        <member name="T:Mobstac.BeaconstacExitedBeaconEventArgs">
+            <summary>
+            Sent to the delegate when the device exited from the region of a beacon on which it was camped on.
+            </summary>
+        </member>
+        <member name="M:Mobstac.BeaconstacExitedBeaconEventArgs.#ctor(Mobstac.MSBeacon)">
+            <summary>
+            Sent to the delegate when the device exited from the region of a beacon on which it was camped on.
+            </summary>
+        </member>
+        <member name="P:Mobstac.BeaconstacExitedBeaconEventArgs.Beacon">
+            <param name="beacon">The beacon that the device was previously camped on to and now has exited
+            	from its range.</param>
+        </member>
+        <member name="T:Mobstac.BeaconstacRuleTriggeredEventArgs">
+            <summary>
+            Sent to the delegate when a rule is triggered and an action needs to be performed.
+            </summary>
+        </member>
+        <member name="M:Mobstac.BeaconstacRuleTriggeredEventArgs.#ctor(System.String,Foundation.NSObject[])">
+            <summary>
+            Sent to the delegate when a rule is triggered and an action needs to be performed.
+            </summary>
+        </member>
+        <member name="P:Mobstac.BeaconstacRuleTriggeredEventArgs.ActionArray">
+            <param name="actionArray">Returns an array of actions to be performed when the rule is triggered.
+            					  Each action is an object of type MSAction.</param>
+        </member>
+        <member name="P:Mobstac.BeaconstacRuleTriggeredEventArgs.RuleName">
+            <param name="ruleName">Rule name for which an action needs to be performed.</param>
+        </member>
+        <member name="T:Mobstac.LocationUpdatedEventArgs">
+            <summary>
+            Reports if the User location changed
+            </summary>
+        </member>
+        <member name="M:Mobstac.LocationUpdatedEventArgs.#ctor(CoreLocation.CLLocation,CoreLocation.CLLocation)">
+            <summary>
+            Reports if the User location changed
+            </summary>
+        </member>
+        <member name="P:Mobstac.LocationUpdatedEventArgs.NewLocation">
+            <param name="newLocation">A CLLocation object of the new location.</param>
+        </member>
+        <member name="P:Mobstac.LocationUpdatedEventArgs.OldLocation">
+            <param name="oldLocation">A CLLocation object of the previous location.</param>
+        </member>
+        <member name="T:Mobstac.MSBeacon">
+            <summary>
+            Represents a single beacon in the system.
+            </summary>/</member>
+        <member name="M:Mobstac.MSBeacon.AddBeaconState(System.Int32)">
+            <summary>
+            This is used to set the current RSSI value internally.
+            </summary>
+            <param name="state">Current RSSI value associated to the beacon object.</param>
+        </member>
+        <member name="M:Mobstac.MSBeacon.GetLatestRssiData">
+            <summary>
+            This returns the latest RSSI value.
+            </summary>
+            <returns>The latest rssi data.</returns>
+        </member>
+        <member name="M:Mobstac.MSBeacon.GetMeanRssi">
+            <summary>
+            Returns the mean of previous three RSSI values associated to the beacon object..
+            </summary>
+            <returns>The mean rssi.</returns>
+        </member>
+        <member name="M:Mobstac.MSBeacon.IsFar">
+            <summary>
+            States if the proximity of the beacon is far.
+            </summary>
+            <returns>
+                <c>true</c> if the beacon is far from device; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="P:Mobstac.MSBeacon.BeaconKey">
+            <summary>
+            Represents beacon identity in the form "UUID:Major:Minor"
+            </summary>
+            <value>The beacon key.</value>
+        </member>
+        <member name="P:Mobstac.MSBeacon.BeaconUUID">
+            <summary>
+            Represents beacon proximity UUID.
+            </summary>
+            <value>The beacon UUID.</value>
+        </member>
+        <member name="P:Mobstac.MSBeacon.Bias">
+            <summary>
+            The correction value applied to the RSSI to smoothen out erroneous values.
+            </summary>
+            <value>The bias.</value>
+        </member>
+        <member name="P:Mobstac.MSBeacon.IsCampedOn">
+            <summary>
+            A bool value indicating whether the device is camped on to this beacon.
+            </summary>
+            <value>
+                <c>true</c> if the device is camped on to this beacon; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Mobstac.MSBeacon.LatestRssi">
+            <summary>
+            Latest value of RSSI, Reverse strength Index as registered by the receiver from the beacon.
+            </summary>
+            <value>The latest rssi.</value>
+        </member>
+        <member name="P:Mobstac.MSBeacon.MajorNumber">
+            <summary>
+            Represents beacon major value.
+            </summary>
+            <value>The major number.</value>
+        </member>
+        <member name="P:Mobstac.MSBeacon.MinorNumber">
+            <summary>
+            Represents beacon minor value.
+            </summary>
+            <value>The minor number.</value>
+        </member>
+        <member name="T:Mobstac.MSBeaconManager">
+            <summary>
+            Manages all the beacons discovered by CLLocationManager and which one to Camp On to
+            </summary>
+        </member>
+        <member name="M:Mobstac.MSBeaconManager.#ctor(Foundation.NSUuid,System.String)">
+            <summary>
+            Initializes a MSBeaconManager to monitor all beacons with the given UUID and identifier.
+            </summary>
+            <param name="uuid">Represents the unique Beacon UUID.</param>
+            <param name="identifier">Represents a string identifier for the beacon region.</param>
+        </member>
+        <member name="M:Mobstac.MSBeaconManager.StartRangingBeacons(Foundation.NSDictionary)">
+            <summary>
+            Start ranging beacons. Returns a list of  beacons through delegate callback
+            filtered using criteria specified in options dictionary
+            </summary>
+            <param name="options">Options.</param>
+        </member>
+        <member name="M:Mobstac.MSBeaconManager.StopLocationUpdates">
+            <summary>
+            Stop sending location updates.
+            </summary>
+        </member>
+        <member name="M:Mobstac.MSBeaconManager.StopRangingBeacons">
+            <summary>
+            Stops ranging the beacons.
+            </summary>
+        </member>
+        <member name="P:Mobstac.MSBeaconManager.Beaconaffinity">
+            <summary>
+            Current affinity level to beacon.
+            </summary>
+            <value>The beaconaffinity.</value>
+        </member>
+        <member name="P:Mobstac.MSBeaconManager.BeaconIdentifier">
+            <summary>
+            Beacon identification string. e.g. com.mobstac.foo.
+            </summary>
+            <value>The beacon identifier.</value>
+        </member>
+        <member name="P:Mobstac.MSBeaconManager.BeaconUUID">
+            <summary>
+            UUID of the beacon.
+            </summary>
+            <value>The beacon UUI.</value>
+        </member>
+        <member name="P:Mobstac.MSBeaconManager.CurrentLocation">
+            <summary>
+            Current location, as reported by the OS.
+            </summary>
+            <value>The current location.</value>
+        </member>
+        <member name="P:Mobstac.MSBeaconManager.RangedBeacons">
+            <summary>
+            A dictionary of all the ranged beacons with beacon key(UUID:Major:Minor)
+            				as the key and MSBeacon object as the value.
+            </summary>
+            <value>The ranged beacons.</value>
+        </member>
+        <member name="P:Mobstac.MSBeaconManager.WeakDelegate">
+            <summary>
+            Protocol used to receive beacon events.
+            </summary>
+            <value>The weak delegate.</value>
+        </member>
+        <member name="M:Mobstac.MSBeaconManagerDelegate_Extensions.BeaconsRanged(Mobstac.IMSBeaconManagerDelegate,Foundation.NSDictionary)">
+            <summary>
+            Gives a dictionary of all visible Beacon objects with
+            MSBeacon as value and key as @"UUID:major:minor".
+            </summary>
+            <param name="beaconsDictionary">Beacons dictionary.</param>
+            <param name="This">Sender object.</param>
+        </member>
+        <member name="M:Mobstac.MSBeaconManagerDelegate_Extensions.CampedOnBeaconAmongstAvailableBeacons(Mobstac.IMSBeaconManagerDelegate,Mobstac.MSBeacon,Foundation.NSDictionary)">
+            <summary>
+            Gives a MSBeacon on which the device is currently camped on
+            amongst all ranged beacons listed in beacons dictionary.
+            </summary>
+            <param name="beacon">Beacon.</param>
+            <param name="beaconsDictionary">Beacons dictionary.</param>
+            <param name="This">Sender object.</param>
+        </member>
+        <member name="M:Mobstac.MSBeaconManagerDelegate.BeaconsRanged(Foundation.NSDictionary)">
+            <summary>
+            Gives a dictionary of all visible Beacon objects with
+            MSBeacon as value and key as @"UUID:major:minor".
+            </summary>
+            <param name="beaconsDictionary">Beacons dictionary.</param>
+        </member>
+        <member name="M:Mobstac.MSBeaconManagerDelegate.CampedOnBeaconAmongstAvailableBeacons(Mobstac.MSBeacon,Foundation.NSDictionary)">
+            <summary>
+            Gives a MSBeacon on which the device is currently camped on
+            amongst all ranged beacons listed in beacons dictionary.
+            </summary>
+            <param name="beacon">Beacon.</param>
+            <param name="beaconsDictionary">Beacons dictionary.</param>
+        </member>
+        <member name="T:Mobstac.MSRuleProcessor">
+            <summary>
+            Rule processor object responsible for syncing rule with server and processing them
+            </summary>	[BaseType (typeof (NSObject))]</member>
+        <member name="M:Mobstac.MSRuleProcessor.ProcessRule">
+            <summary>
+            Processes the rule.
+            </summary>
+        </member>
+        <member name="M:Mobstac.MSRuleProcessor.SharedInstance">
+            <summary>
+            Shared instance for Rule Processor.
+            </summary>
+            <returns>The Rule Processor instance.</returns>
+        </member>
+        <member name="M:Mobstac.MSRuleProcessor.SyncWithServer(Mobstac.SyncCompletionBlock)">
+            <summary>
+            Download the latest ruleset from the server and update the app's local copy.
+            </summary>
+            <param name="block">Block.</param>
+        </member>
+        <member name="P:Mobstac.MSRuleProcessor.FactsDictionary">
+            <summary>
+            Dictionary containing all known "facts" that you would like to use in your rules.
+            For e.g., you may know that the temperature in the room is 23C.
+            You can then set this in the dictionary.
+            "temperature" =&gt; 23
+            and the rule processor will use this fact in evaluating rules.
+            </summary>
+            <value>The facts dictionary.</value>
+        </member>
+        <member name="P:Mobstac.MSRuleProcessor.RuleDictionary">
+            <summary>
+            Dictionary containing all rules, downloaded from the Beaconstac server
+            </summary>
+            <value>The rule dictionary.</value>
+        </member>
+        <member name="P:Mobstac.MSRuleProcessor.TimerArray">
+            <summary>
+            Array of timers that will be fired
+            </summary>
+            <value>The timer array.</value>
+        </member>
+        <member name="P:Mobstac.MSRuleProcessor.WeakDelegate">
+            <summary>
+            Delegate that will receive events fired by the rule processor.
+            </summary>
+            <value>The weak delegate.</value>
+        </member>
+        <member name="T:Mobstac.MSAction">
+            <summary>
+            MSActionType describes the type of action triggered from a rule
+            An action can be popup, card, webpage, webhook, custom.
+            </summary>
+        </member>
+        <member name="M:Mobstac.MSAction.ExecuteWebhook(Foundation.NSMutableDictionary,Foundation.NSMutableDictionary,Mobstac.WebHookCompletionBlock)">
+            <summary>
+            This method must be called when action type is webhook.
+            This posts data to the URL provided in Beaconstac developer portal.
+            </summary>
+            /// <param name="postParams">A dictionary of data that you want to post to the URL. Please note that timestamp
+            and data available in factsDictionary is automatically posted.
+            </param><param name="additionalHeaders">A dictionary of HTTP headers with values. Plesae note that HTTP headers
+            sent from the portal are set by default
+            </param><param name="block">A block object to be executed when the request operation finishes. It takes
+            three arguments: statusCode- HTTP status code sent by server, data- Server response after the
+            request has been executed, error- which is a NSError object describing the failure of the request
+            </param></member>
+        <member name="P:Mobstac.MSAction.ActionID">
+            <summary>
+            Represents the action ID of the action
+            </summary>
+            <value>actionID.</value>
+        </member>
+        <member name="P:Mobstac.MSAction.ActionMeta">
+            <summary>
+            A dictionary that contains meta information associated with the action
+            </summary>
+            <value>The action meta.</value>
+        </member>
+        <member name="P:Mobstac.MSAction.ActionType">
+            <summary>
+            Represents the type of the action. This can have values:popup, webpage, webhook, custom.
+            </summary>
+            <value>The type of the action.</value>
+        </member>
+        <member name="P:Mobstac.MSAction.Message">
+            <summary>
+            Represents the message of the action. This can have
+            text, url, JSON depending on the type of action
+            </summary>
+            <value>message object.</value>
+        </member>
+        <member name="P:Mobstac.MSAction.Status">
+            <summary>
+            Gets or sets the status.
+            </summary>
+            <value>The status.</value>
+        </member>
+        <member name="T:Mobstac.MSMedia">
+            <summary>
+            Instance of media object e.g. picture, audio, video
+            </summary>
+        </member>
+        <member name="P:Mobstac.MSMedia.ContentType">
+            <summary>
+            Represents the content type of the media object
+            This can have values like image/jpeg, audio/mpeg, video/avi etc.
+            </summary>
+            <value>The type of the content.</value>
+        </member>
+        <member name="P:Mobstac.MSMedia.Name">
+            <summary>
+            Represents the name of the media object.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Mobstac.MSMedia.Tags">
+            <summary>
+            Represents an array of tags associated to the media object
+            </summary>
+            <value>The tags.</value>
+        </member>
+    </members>
+</doc>
